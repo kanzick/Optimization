@@ -1,0 +1,6 @@
+name,optimizer,use_bn,dropout_rate,epochs,training_loss,validation_accuracy,time_seconds,convergence_epoch
+Baseline_SGD,SGD,False,0.0,6,1.6123,0.4210,12.12,4
+BN_Dropout_0.3_SGDm,SGD+Momentum,True,0.3,6,1.2148,0.5631,13.05,5
+BN_Dropout_0.5_SGDm,SGD+Momentum,True,0.5,6,1.1459,0.5910,13.89,5
+BN_Dropout_0.3_Adam,Adam,True,0.3,6,1.0721,0.6120,13.37,4
+BN_Dropout_0.5_Adam,Adam,True,0.5,6,1.0312,0.6288,13.60,4

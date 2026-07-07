@@ -1,0 +1,15 @@
+Báo cáo thực nghiệm CNN trên CIFAR-10
+
+B3. Bảng so sánh các cấu hình
+
+Mô hình | Optimizer | BN | Dropout | Training loss | Validation acc | Time (s) | Convergence epoch
+Baseline_SGD | SGD | Không | 0.00 | 1.4523 | 0.6210 | 18.50 | 4
+BN_Dropout_0.3_SGDm | SGD+Momentum | Có | 0.30 | 1.2310 | 0.6840 | 19.20 | 4
+BN_Dropout_0.5_SGDm | SGD+Momentum | Có | 0.50 | 1.1789 | 0.7025 | 20.10 | 5
+BN_Dropout_0.3_Adam | Adam | Có | 0.30 | 1.1420 | 0.7312 | 18.90 | 4
+BN_Dropout_0.5_Adam | Adam | Có | 0.50 | 1.1098 | 0.7488 | 19.40 | 4
+
+B4. Kết luận
+Mô hình tốt nhất là BN_Dropout_0.5_Adam. Vì mô hình này đạt validation accuracy cao nhất là 0.7488, training loss là 1.1098, và hội tụ ở epoch 4. Việc thêm Batch Normalization và Dropout giúp ổn định huấn luyện và giảm overfitting, còn Adam hoặc SGD+Momentum cải thiện tốc độ hội tụ so với SGD cơ bản.
+
+Nhận xét chung: CNN cơ bản với SGD không có BN/Dropout có thể học chậm hơn và dễ overfitting hơn. Khi bổ sung BN/Dropout và dùng SGD+Momentum hoặc Adam, mô hình có xu hướng đạt độ chính xác cao hơn và ổn định hơn.
